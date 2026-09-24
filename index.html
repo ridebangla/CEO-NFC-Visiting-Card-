@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Enamul Seddik — Ride Bangla</title>
+<meta name="theme-color" content="#052a1b">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Allura&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#062b1c;--green2:#0b3a26;--gold:#e3c275;--gold2:#b9923c;--red:#c71924;--cream:#f5f0e5;--ink:#17241e;--muted:#cbd3cd;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Plus Jakarta Sans",Arial,sans-serif;--script:Allura,"Brush Script MT",cursive}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:var(--sans)}body{background:radial-gradient(circle at 50% 0,#20352c 0,#0b100d 43%,#050705 100%);display:flex;justify-content:center;padding:28px 14px 34px;color:#fff}
+.shell{width:min(100%,390px)}
+.flip{width:100%;aspect-ratio:0.79;perspective:1800px}.inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .82s cubic-bezier(.25,.72,.18,1)}.inner.flipped{transform:rotateY(180deg)}
+.card{position:absolute;inset:0;border-radius:22px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 24px 55px rgba(0,0,0,.48),inset 0 0 0 1px rgba(255,255,255,.12);cursor:pointer}
+.front{background:radial-gradient(120% 90% at 15% 0,#0b4a30 0,#062d1e 45%,#03170e 100%);border:1px solid rgba(227,194,117,.95)}
+.front:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px);pointer-events:none;mix-blend-mode:screen}
+.front .logo{position:absolute;left:10%;top:5.8%;width:31%;z-index:2;filter:drop-shadow(0 4px 7px rgba(0,0,0,.38))}.nfc{position:absolute;right:9%;top:6.5%;z-index:2;color:var(--gold);font-size:.67rem;text-align:center;font-weight:500}.nfc svg{display:block;width:34px;height:34px;margin:0 auto 2px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.person{position:absolute;left:7%;right:7%;top:31%;display:grid;grid-template-columns:33% 1fr;gap:5%;align-items:center;z-index:2}.portrait{width:100%;aspect-ratio:1;border-radius:50%;padding:3px;background:linear-gradient(145deg,#f8e4aa,#b68b35,#f5dda0);box-shadow:0 8px 18px rgba(0,0,0,.5)}.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:50%;border:2px solid #0b2b1c}.name{font:700 clamp(1.45rem,7vw,1.9rem)/.98 var(--serif);color:#fbf5e7;white-space:nowrap}.role{margin-top:8px;color:var(--gold);font-size:.86rem;line-height:1.35}.role strong{font-weight:600}.rule{width:72%;height:1px;background:var(--gold);margin-top:10px;opacity:.9}
+.details{position:absolute;left:47%;right:7%;top:56%;z-index:2;display:grid;gap:8px}.detail{display:flex;align-items:center;gap:10px;color:#f5f1e7;font-size:.75rem;line-height:1.25}.detail .ico{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex:none;background:linear-gradient(145deg,#f7e6ad,#d9b75e,#b98f38);color:#123321}.detail svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.tag{position:absolute;left:8%;bottom:8.5%;z-index:2;color:var(--gold);font:1.22rem/1 var(--script);transform:rotate(-8deg);text-shadow:0 1px 2px #000}.tagline{position:absolute;left:10%;bottom:5.2%;width:42%;height:1px;background:var(--gold);transform:rotate(-10deg);transform-origin:left}
+.ribbon{position:absolute;right:-5%;bottom:-2%;width:69%;height:28%;z-index:1;transform:rotate(-7deg);background:linear-gradient(150deg,transparent 0 18%,#0c5635 18% 65%,transparent 65%);clip-path:polygon(24% 0,100% 0,100% 100%,0 100%)}.ribbon:before{content:"";position:absolute;right:0;bottom:31%;width:100%;height:27%;background:var(--red);clip-path:polygon(39% 0,100% 0,100% 100%,0 100%)}.ribbon:after{content:"";position:absolute;right:0;bottom:54%;width:100%;height:2px;background:var(--gold);transform:rotate(0deg)}
+.back{transform:rotateY(180deg);background:var(--cream);color:var(--ink);border:1px solid rgba(255,255,255,.85);display:flex;flex-direction:column}.back .topline{position:relative;height:21%;padding:5% 8% 0;display:flex;justify-content:space-between;align-items:flex-start}.back .logo{width:29%;filter:drop-shadow(0 2px 3px rgba(0,0,0,.12))}.scan{font:1.48rem/1.02 var(--script);color:#1e201c;text-align:center;transform:rotate(-2deg);margin-right:2%;margin-top:3%}.scan-arrow{position:absolute;right:11%;top:55%;width:55px;height:55px;transform:rotate(10deg)}.scan-arrow path{fill:none;stroke:#1c1d1a;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.qrbox{height:30%;display:flex;justify-content:center;align-items:center;position:relative}.qrframe{position:relative;padding:7px;border-radius:14px;background:#fff;box-shadow:0 0 0 2px #123a29,0 0 0 4px var(--gold)}.qrframe:before,.qrframe:after{content:"";position:absolute;width:25px;height:25px;pointer-events:none}.qrframe:before{left:-6px;top:-6px;border-top:3px solid #2d9660;border-left:3px solid #2d9660;border-radius:10px 0 0 0}.qrframe:after{right:-6px;bottom:-6px;border-right:3px solid var(--red);border-bottom:3px solid var(--red);border-radius:0 0 10px 0}.qr{width:145px;aspect-ratio:1;background:#fff;border-radius:7px;display:grid;place-items:center;overflow:hidden}.qr svg{width:100%;height:100%;display:block}.qr img{position:absolute;width:30px;height:30px;object-fit:contain;background:#fff;padding:3px;border-radius:5px}
+.tiles{height:25%;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 8%;align-content:start}.tile{appearance:none;border:1px solid rgba(50,58,52,.08);border-radius:15px;background:rgba(255,255,255,.8);box-shadow:0 2px 7px rgba(25,32,27,.07);min-height:58px;color:#18241e;text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:.61rem;font-weight:600;cursor:pointer}.tile svg{width:20px;height:20px;fill:none;stroke:#123d2b;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.tile .brand{fill:#123d2b;stroke:none}
+.about{position:absolute;left:0;right:0;bottom:0;height:25%;padding:7% 9% 5%;z-index:2;background:linear-gradient(160deg,#062e1e,#031a10);color:#fff;border-top:1px solid rgba(227,194,117,.65);overflow:hidden}.about:after{content:"";position:absolute;left:-8%;right:-8%;bottom:-21%;height:62%;background:linear-gradient(150deg,transparent 0 43%,#0a5535 43% 72%,transparent 72%);transform:rotate(-5deg)}.about:before{content:"";position:absolute;right:-2%;bottom:-7%;width:52%;height:32%;background:var(--red);clip-path:polygon(34% 0,100% 0,100% 100%,0 100%);opacity:.96}.about-inner{position:relative;z-index:3;display:grid;grid-template-columns:30px 1fr;gap:5px 10px}.about-icon{width:28px;height:28px;color:var(--gold);display:grid;place-items:center}.about-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5}.about h2{margin:0;color:var(--gold);font-size:.82rem;font-weight:600}.about p{margin:0;color:#dce3de;font-size:.62rem;line-height:1.38;max-width:92%}
+.hint{margin-top:13px;text-align:center;color:rgba(245,240,229,.55);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:360px){body{padding-left:9px;padding-right:9px}.name{font-size:1.35rem}.detail{font-size:.68rem}.qr{width:125px}.scan{font-size:1.28rem}.tile{min-height:53px;font-size:.56rem}.about p{font-size:.57rem}}
+@media(prefers-reduced-motion:reduce){.inner{transition:none}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <div class="flip" aria-label="Ride Bangla digital business card">
+    <div class="inner" id="inner">
+      <section class="card front" id="front" aria-label="Front of card. Tap to flip.">
+        <img class="logo" src="logo.png" alt="Ride Bangla">
+        <div class="nfc"><svg viewBox="0 0 24 24"><path d="M8.2 7.2a7 7 0 0 1 0 9.6M5.2 4.3a11 11 0 0 1 0 15.4M11.3 10.2a3 3 0 0 1 0 3.6"/></svg>Tap to Connect</div>
+        <div class="person">
+          <div class="portrait"><img src="photo.png" alt="Enamul Seddik"></div>
+          <div><div class="name">Enamul Seddik</div><div class="role">Co-Founder &amp; CEO<br>Ride Bangla</div><div class="rule"></div></div>
+        </div>
+        <div class="details">
+          <a class="detail" href="tel:+8801712345678"><span class="ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 9 9 0 0 0 2.8.45 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1c0 1 .15 1.9.45 2.8a1 1 0 0 1-.25 1Z"/></svg></span>+880 1712 345678</a>
+          <a class="detail" href="mailto:enamul@ridebangla.bd"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>enamul@ridebangla.bd</a>
+          <a class="detail" href="https://ridebangla.bd" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg></span>www.ridebangla.bd</a>
+          <div class="detail"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Dhaka, Bangladesh</div>
+        </div>
+        <div class="tag">Together We Move<br>&nbsp;&nbsp;&nbsp;A Better Tomorrow</div><div class="tagline"></div><div class="ribbon"></div>
+      </section>
+
+      <section class="card back" id="back" aria-label="Back of card. Tap card to flip back.">
+        <div class="topline"><img class="logo" src="logo.png" alt="Ride Bangla"><div class="scan">Scan &amp;<br>Connect</div><svg class="scan-arrow" viewBox="0 0 60 60"><path d="M51 6C36 10 18 20 8 39"/><path d="M7 28l1 13 12-5"/></svg></div>
+        <div class="qrbox"><div class="qrframe"><div class="qr" id="qr"><img src="logo.png" alt=""></div></div></div>
+        <div class="tiles" id="tiles"></div>
+        <div class="about"><div class="about-inner"><div class="about-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="9.5" r="2.5"/><path d="M6.2 18.2a6.5 6.5 0 0 1 11.6 0"/></svg></div><h2>About Us</h2><div></div><p>Ride Bangla is a modern multi-service platform, providing ride-hailing, food delivery, parcel &amp; courier services. We are committed to making your daily life easier, faster and more convenient.</p></div></div>
+      </section>
+    </div>
+  </div>
+  <div class="hint">Tap the card to flip</div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+const LINKS={
+ website:'https://ridebangla.bd',
+ whatsapp:'https://wa.me/message/PXKXRV6LJGHEG1',
+ facebook:'https://www.facebook.com/enamul.seddik',
+ linkedin:'#', youtube:'#',
+ location:'https://www.google.com/maps/search/?api=1&query=Dhaka%2C+Bangladesh'
+};
+const icons={
+ website:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/>',
+ whatsapp:'<path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.89-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/><path d="M12 22a10 10 0 1 0-8.7-5L2 22l5.2-1.36A10 10 0 0 0 12 22Z"/>',
+ facebook:'<path class="brand" d="M9.1 23.7v-8H6.63v-3.67H9.1v-1.58c0-4.09 1.85-5.98 5.86-5.98.4 0 .95.04 1.47.1.45.05.85.12 1.14.2v3.33c-.16-.02-.37-.04-.65-.04-.25-.01-.5-.01-.73-.01-.71 0-1.26.1-1.68.31-.45.23-.68.62-.68.62-.26.42-.37 1-.37 1.75v1.3h3.92l-.39 2.1-.29 1.56h-3.25v8.25C19.4 23.24 24 18.18 24 12.04 24 5.42 18.63.04 12 .04S0 5.42 0 12.04c0 5.63 3.87 10.35 9.1 11.65Z"/>',
+ linkedin:'<path class="brand" d="M416 32H32C14 32 0 47 0 64v384c0 18 14 32 32 32h384c18 0 32-14 32-32V64c0-17-14-32-32-32ZM135 416H69V202h66v214ZM102 173a39 39 0 1 1 0-77 39 39 0 0 1 0 77Zm282 243h-66V312c0-25-.5-57-35-57-35 0-40 27-40 55v106h-66V202h64v29h1c9-17 31-35 63-35 67 0 80 44 80 102v101Z"/>',
+ youtube:'<path class="brand" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8ZM9.5 15.6V8.4l6.3 3.6-6.3 3.6Z"/>',
+ location:'<path d="M19 5c1.2 2.6.9 5.7-.4 8.2-1.1 2-2.7 3.7-4.1 5.6-.6.9-1.2 1.8-1.7 2.7-.1.3-.3.7-.4 1-.1.3-.2.7-.6.7-.5 0-.6-.5-.7-.9-.3-.9-.6-1.7-1-2.5-.5-.9-1.1-1.8-1.8-2.7l-.7-.9 4.7-5.6-.1.01c-1.7.6-3.7-.3-4.4-2-.1-.2-.2-.5-.2-.7-.1-.4-.1-.8 0-1.2l-4.8 5.7c-1.2-2.9-.8-6.3 1.1-8.8l4.2-5a8.4 8.4 0 0 1 9.6 1.4Z"/>'
+};
+const labels={website:'Website',whatsapp:'WhatsApp',facebook:'Facebook',linkedin:'LinkedIn',youtube:'YouTube',location:'Location'};
+const tileOrder=['website','whatsapp','facebook','linkedin','youtube','location'];
+const tiles=document.getElementById('tiles');
+tileOrder.forEach(k=>{if(!LINKS[k]||LINKS[k]==='#')return;const a=document.createElement('a');a.className='tile';a.href=LINKS[k];a.target='_blank';a.rel='noopener';a.innerHTML='<svg viewBox="0 0 24 24">'+icons[k]+'</svg><span>'+labels[k]+'</span>';a.addEventListener('click',e=>e.stopPropagation());tiles.appendChild(a)});
+try{const url=/^https?:/.test(location.href)?location.href.split('#')[0]:LINKS.website;const q=qrcode(0,'H');q.addData(url);q.make();document.getElementById('qr').insertAdjacentHTML('afterbegin',q.createSvgTag({cellSize:4,margin:0,scalable:true}));}catch(e){}
+const inner=document.getElementById('inner');
+function flip(){inner.classList.toggle('flipped')}
+document.getElementById('front').addEventListener('click',e=>{if(e.target.closest('a'))return;flip()});
+document.getElementById('back').addEventListener('click',e=>{if(e.target.closest('a'))return;flip()});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){if(document.activeElement===document.getElementById('front')||document.activeElement===document.getElementById('back')){e.preventDefault();flip()}}});
+</script>
+</body>
+</html>
