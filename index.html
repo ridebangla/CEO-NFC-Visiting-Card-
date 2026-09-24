@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enamul Seddik — Co-Founder &amp; CEO, Ride Bangla</title>
+<meta name="description" content="Official digital business card of Enamul Seddik, Co-Founder &amp; CEO of Ride Bangla — ride sharing, food and parcel delivery, courier, marketplace, medicine, IT and Ride Bangla Pay.">
+<meta name="theme-color" content="#04150d">
+<meta property="og:title" content="Enamul Seddik — Co-Founder &amp; CEO, Ride Bangla">
+<meta property="og:image" content="logo.png">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Allura&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--g0:#031009;--g1:#0a3a25;--g2:#0f4d31;--gold:#e0bd6a;--gold2:#b98d32;--red:#c8202a;--txt:#f4efe1;--mute:#c9d6cb;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--script:Allura,"Brush Script MT",cursive}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--txt);background:radial-gradient(120% 70% at 50% 0,#0d2a1c,#050a07 60%) fixed,#050a07;min-height:100vh;
+padding:max(20px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:22px}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+svg.b{fill:currentColor;stroke:none}
+.wrap{width:min(100%,400px)}
+
+/* ---------- flip card ---------- */
+.flipcard{width:100%;aspect-ratio:5/8;perspective:1800px}
+.flipcard-inner{position:relative;width:100%;height:100%;transition:transform .8s cubic-bezier(.3,.7,.2,1);transform-style:preserve-3d}
+.flipcard-inner.flipped{transform:rotateY(180deg)}
+
+.card{position:absolute;inset:0;overflow:hidden;border-radius:26px;isolation:isolate;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+background:repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px),linear-gradient(155deg,var(--g2),var(--g1) 45%,var(--g0));
+border:1.5px solid var(--gold);box-shadow:inset 0 0 0 5px rgba(0,0,0,.35),inset 0 0 0 6px rgba(224,189,106,.35),0 24px 50px -12px #000,0 0 0 1px #000}
+.card>*{position:relative;z-index:1}
+.card.front{cursor:pointer}
+.card.back{transform:rotateY(180deg);display:flex;flex-direction:column;align-items:center}
+.wave{position:absolute!important;right:0;bottom:0;left:auto;width:58%;z-index:0!important;pointer-events:none}
+.logo{filter:drop-shadow(0 3px 6px rgba(0,0,0,.45));display:block}
+.front .logo{position:absolute;left:6%;top:4.5%;width:36%}
+.tap{position:absolute;right:7%;top:6%;text-align:right;color:var(--gold);font-size:.72rem;letter-spacing:.02em}
+.tap svg{display:block;margin:0 0 4px auto;font-size:2.1rem}
+.who{position:absolute;left:6%;right:5%;top:36%;display:grid;grid-template-columns:34% 1fr;gap:4%;align-items:center}
+.photo{aspect-ratio:1;border-radius:50%;padding:3px;background:linear-gradient(140deg,#f6e2a3,var(--gold2) 50%,#f6e2a3);box-shadow:0 8px 18px rgba(0,0,0,.5)}
+.photo img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 50%;display:block;border:2px solid #0a2a1b}
+h1{font:700 clamp(1.45rem,7.2vw,1.85rem)/1.05 var(--serif);color:#fbf3dc;letter-spacing:.005em}
+.role{margin-top:8px;color:var(--gold);font-size:.86rem;line-height:1.35;font-weight:500}
+.rule{grid-column:1/-1;height:1.5px;width:60%;margin:8px 0 0 38%;background:linear-gradient(90deg,var(--gold),transparent)}
+.list{position:absolute;left:6%;right:4%;top:58.5%;list-style:none;padding:0;display:grid;gap:8px}
+.list a{display:flex;align-items:center;gap:11px;font-size:.84rem;min-width:0}
+.list span.ic{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:.95rem;color:#0a2a1b;background:radial-gradient(circle at 30% 25%,#f8e7b0,var(--gold) 55%,var(--gold2))}
+.list b{font-weight:500;overflow-wrap:anywhere}
+.tag{position:absolute;left:6%;bottom:3.5%;font:1.3rem/1.05 var(--script);color:var(--gold);transform:rotate(-8deg);transform-origin:left bottom;text-shadow:0 1px 2px #000}
+
+/* ---------- actions ---------- */
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.btn{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 6px;border-radius:16px;border:1px solid rgba(224,189,106,.55);background:linear-gradient(180deg,#0e3a26,#082417);color:var(--txt);font:500 .8rem var(--sans);cursor:pointer;transition:border-color .2s,transform .2s}
+.btn:hover{border-color:var(--gold);transform:translateY(-2px)}
+.btn .i{font-size:1.4rem;color:var(--gold)}
+.open{width:100%;margin-top:12px;flex-direction:row;justify-content:center;gap:10px;padding:14px;font-size:.92rem;background:linear-gradient(180deg,#f0d78d,var(--gold2));color:#1a1204;border-color:#f6e2a3;font-weight:600}
+.open .i{color:#1a1204;transition:transform .3s}
+.open[aria-expanded=true] .i{transform:rotate(180deg)}
+
+/* ---------- back face ---------- */
+.back{padding:14px 16px 0;overflow-y:auto;scrollbar-width:none}
+.back::-webkit-scrollbar{display:none}
+.back .top{width:100%;display:flex;align-items:flex-start;justify-content:center;position:relative}
+.back .logo{width:32%}
+.backbtn{position:absolute;right:0;top:0;display:flex;flex-direction:column;align-items:flex-end;gap:3px;background:none;border:0;color:var(--gold);font:500 .68rem var(--sans);cursor:pointer;padding:0}
+.backbtn svg{font-size:1.3rem}
+.qrrow{margin:6px 0 2px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;width:100%}
+.qrframe{grid-column:2;justify-self:center;position:relative;padding:9px}
+.cnr{position:absolute;width:18px;height:18px;pointer-events:none;border-radius:8px}
+.cnr.tl{left:0;top:0;border-top:3px solid #3fa06b;border-left:3px solid #3fa06b;border-radius:8px 0 0 0}
+.cnr.bl{left:0;bottom:0;border-bottom:3px solid #3fa06b;border-left:3px solid #3fa06b;border-radius:0 0 0 8px}
+.cnr.tr{right:0;top:0;border-top:3px solid #c8202a;border-right:3px solid #c8202a;border-radius:0 8px 0 0}
+.cnr.br{right:0;bottom:0;border-bottom:3px solid #c8202a;border-right:3px solid #c8202a;border-radius:0 0 8px 0}
+.qr{position:relative;width:min(132px,32vw);aspect-ratio:1;padding:7px;background:#fff;border-radius:14px;box-shadow:0 0 0 3px #0a2a1b,0 0 0 4.5px var(--gold)}
+.qr svg{display:block;width:100%;height:auto}
+.qr img{position:absolute;left:50%;top:50%;width:24%;transform:translate(-50%,-50%);background:#fff;border-radius:6px;padding:2px}
+.scanwrap{grid-column:3;justify-self:start;margin-left:10px;display:flex;flex-direction:column;align-items:flex-start;gap:1px}
+.scan{font:1.05rem/1.15 var(--script);color:var(--gold);text-align:left;white-space:nowrap}
+.arrow{width:44px;height:auto;color:var(--gold);margin-left:2px}
+.tiles{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;width:100%;margin-top:9px}
+.tile{flex:0 0 calc(33.333% - 4px);display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px 3px;border-radius:13px;border:1px solid rgba(224,189,106,.6);background:rgba(2,14,8,.55);font-size:.64rem;font-weight:500}
+.tile svg{width:18px;height:18px}
+.about{position:relative;z-index:2;width:calc(100% + 32px);margin:10px -16px 0;padding:9px 16px 24px;border-top:1px solid rgba(224,189,106,.6);display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-content:start;background:linear-gradient(180deg,rgba(4,20,12,.001),rgba(3,16,9,.55) 40%)}
+.about .i{font-size:1.4rem;color:var(--gold);grid-row:span 2}
+.about h2{font:600 .84rem var(--sans);color:var(--gold)}
+.about p{font-size:.64rem;line-height:1.36;color:var(--mute)}
+
+/* ---------- services ---------- */
+.svc{width:min(100%,400px)}
+.svc h2{font:700 1.6rem/1.1 var(--serif);color:#fbf3dc;text-align:center}
+.svc>p{text-align:center;color:var(--mute);font-size:.84rem;margin:6px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.s{display:flex;align-items:center;gap:11px;padding:13px 12px;border-radius:16px;border:1px solid rgba(224,189,106,.4);background:linear-gradient(160deg,#0d3624,#06180f);font-size:.82rem;font-weight:500;line-height:1.25}
+.s .i{flex:none;font-size:1.5rem;color:var(--gold)}
+.s.full{grid-column:1/-1;justify-content:center}
+.s.pay{justify-content:center;border-color:var(--gold);background:linear-gradient(160deg,#16442d,#08241a)}
+footer{font-size:.75rem;color:var(--mute);text-align:center;line-height:1.7}
+@media (max-height:600px){
+  .back{padding-top:12px}
+  .back .logo{width:24%}
+  .qrrow{margin:6px 0 0}
+  .tiles{margin-top:8px;gap:5px}
+  .tile{padding:6px 3px;gap:3px}
+  .tile svg{width:17px;height:17px}
+  .about{margin-top:8px;padding:9px 16px 12px}
+  .about p{font-size:.62rem;line-height:1.35}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <div class="flipcard" id="flipcard">
+    <div class="flipcard-inner" id="flipInner">
+
+      <!-- FRONT -->
+      <section class="card front" id="frontFace" aria-label="Business card — Enamul Seddik. Tap to flip and scan." role="button" tabindex="0">
+        <svg class="wave" viewBox="0 0 220 90" preserveAspectRatio="none" style="height:17%" aria-hidden="true">
+          <path d="M220 0 L220 90 L50 90 Z" fill="#0b4a2d"/>
+          <path d="M220 0 L50 90" fill="none" stroke="#e0bd6a" stroke-width="2.5"/>
+          <path d="M220 32 L220 90 L112 90 Z" fill="#b3131b"/>
+          <path d="M220 32 L112 90" fill="none" stroke="#e0bd6a" stroke-width="2"/>
+        </svg>
+        <img class="logo" src="logo.png" alt="Ride Bangla logo">
+        <div class="tap"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9.5a4 4 0 0 1 0 5M9 7a8 8 0 0 1 0 10M13 4.500a12 12 0 0 1 0 15"/></svg>Tap to Connect</div>
+
+        <div class="who">
+          <div class="photo"><img src="photo.png" alt="Enamul Seddik"></div>
+          <div><h1>Enamul Seddik</h1><p class="role">Co-Founder &amp; CEO<br>Ride Bangla</p></div>
+          <div class="rule"></div>
+        </div>
+
+        <ul class="list">
+          <li><a href="tel:+8801626633316"><span class="ic" id="i-phone"></span><b>+880 1626-633316</b></a></li>
+          <li><a href="mailto:info@ridebangla.bd"><span class="ic" id="i-mail"></span><b>info@ridebangla.bd</b></a></li>
+          <li><a href="https://ridebangla.bd" target="_blank" rel="noopener"><span class="ic" id="i-globe"></span><b>https://ridebangla.bd</b></a></li>
+          <li><a id="mapRow" href="https://www.google.com/maps/search/?api=1&query=Dhaka%2C+Bangladesh" target="_blank" rel="noopener"><span class="ic" id="i-pin"></span><b>Dhaka, Bangladesh</b></a></li>
+        </ul>
+        <p class="tag">Together We Move,<br>&nbsp;&nbsp;A Better Tomorrow</p>
+      </section>
+
+      <!-- BACK -->
+      <section class="card back" aria-label="Scan and connect">
+        <svg class="wave" viewBox="0 0 220 90" preserveAspectRatio="none" style="height:14%" aria-hidden="true">
+          <path d="M220 0 L220 90 L50 90 Z" fill="#0b4a2d"/>
+          <path d="M220 0 L50 90" fill="none" stroke="#e0bd6a" stroke-width="2.5"/>
+          <path d="M220 32 L220 90 L112 90 Z" fill="#b3131b"/>
+          <path d="M220 32 L112 90" fill="none" stroke="#e0bd6a" stroke-width="2"/>
+        </svg>
+        <div class="top">
+          <img class="logo" src="logo.png" alt="Ride Bangla logo">
+          <button class="backbtn" id="backBtn" type="button" aria-label="Flip back to card front">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>Back
+          </button>
+        </div>
+        <div class="qrrow">
+          <div class="qrframe">
+            <span class="cnr tl"></span><span class="cnr tr"></span><span class="cnr bl"></span><span class="cnr br"></span>
+            <div class="qr" id="qr" aria-label="QR code for this card"><img src="logo.png" alt=""></div>
+          </div>
+          <div class="scanwrap">
+            <div class="scan">Scan &amp;<br>Connect</div>
+            <svg class="arrow" viewBox="0 0 60 40" aria-hidden="true"><path d="M50 4C30 4 14 14 6 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M4 20 L6 32 L17 29" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="tiles" id="tiles"></div>
+        <div class="about"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M6.200 18.200a6.500 6.500 0 0 1 11.600 0"/></svg>
+          <h2>About Us</h2>
+          <p>Ride Bangla is a modern multi-service platform — ride sharing, food &amp; parcel delivery, courier, marketplace, medicine, IT solutions and Ride Bangla Pay — making daily life easier, faster and more convenient.</p></div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="acts">
+    <button class="btn" id="save" type="button"><svg class="i" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Save contact</button>
+    <a class="btn" href="tel:+8801626633316"><svg class="i" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 9 9 0 0 0 2.8.45 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1c0 1 .15 1.9.45 2.8a1 1 0 0 1-.25 1Z"/></svg>Call</a>
+    <a class="btn" href="mailto:info@ridebangla.bd"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+  </div>
+  <button class="btn open" id="open" type="button" aria-expanded="false" aria-controls="flipcard">
+    <span class="lbl">Scan &amp; Connect</span> <svg class="i" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+  </button>
+</main>
+
+<section class="svc" aria-labelledby="st">
+  <h2 id="st">Our Services</h2>
+  <p>One platform for everyday life in Bangladesh.</p>
+  <div class="grid" id="svc"></div>
+</section>
+
+<footer>© Ride Bangla · <a href="https://ridebangla.bd" target="_blank" rel="noopener"><u>https://ridebangla.bd</u></a></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+/* ===== EDIT HERE — leave a link "" to hide its tile ===== */
+/* 👉 PLEASE REPLACE the linkedin/youtube "#" placeholders below with your real page links */
+const LINKS={
+  website:  "https://ridebangla.bd",
+  whatsapp: "https://wa.me/message/PXKXRV6LJGHEG1",
+  facebook: "https://www.facebook.com/enamul.seddik",
+  linkedin: "#",   // 👉 replace # with your real LinkedIn URL
+  youtube:  "#",   // 👉 replace # with your real YouTube URL
+  location: "https://www.google.com/maps/search/?api=1&query=Dhaka%2C+Bangladesh"
+};
+/* ========================================================= */
+const $=id=>document.getElementById(id);
+const S=(p,v='0 0 24 24',c='')=>`<svg class="i ${c}" viewBox="${v}" aria-hidden="true">${p}</svg>`;
+// official brand marks (Simple Icons / Font Awesome Brands), in brand colours
+const B={
+ website:['Website','<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/>','#e0bd6a'],
+ whatsapp:['WhatsApp','<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52s.198-.298.298-.497c.099-.198.05-.371-.025-.52s-.669-1.612-.916-2.207c-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074s2.096 3.2 5.077 4.487c.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413s.248-1.289.173-1.413c-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/>','#25D366',1],
+ facebook:['Facebook','<path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/>','#1877F2',1],
+ linkedin:['LinkedIn','<path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/>','#0A66C2',1,'0 32 448 448'],
+ youtube:['YouTube','<path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/>','#FF0000',1],
+ location:['Location','<path d="M19.527 4.799c1.212 2.608.937 5.678-.405 8.173-1.101 2.047-2.744 3.74-4.098 5.614-.619.858-1.244 1.75-1.669 2.727-.141.325-.263.658-.383.992-.121.333-.224.673-.34 1.008-.109.314-.236.684-.627.687h-.007c-.466-.001-.579-.53-.695-.887-.284-.874-.581-1.713-1.019-2.525-.51-.944-1.145-1.817-1.79-2.671zM8.545 7.705l-3.959 4.707c.724 1.54 1.821 2.863 2.871 4.18q.371.465.737.936l4.984-5.925-.029.01c-1.741.601-3.691-.291-4.392-1.987a3.4 3.4 0 0 1-.209-.716c-.063-.437-.077-.761-.004-1.198zM5.492 3.149l-.003.004c-1.947 2.466-2.281 5.88-1.117 8.77l4.785-5.689-.058-.05zM14.661.436l-3.838 4.563.027-.01c1.6-.551 3.403.15 4.22 1.626.176.319.323.683.377 1.045.068.446.085.773.012 1.22l-.003.016 3.836-4.561A8.38 8.38 0 0 0 14.67.439zM9.466 5.868 14.162.285l-.047-.012A8.3 8.3 0 0 0 11.986 0a8.44 8.44 0 0 0-6.169 2.766l-.016.018z"/>','#EA4335',1]
+};
+$('tiles').innerHTML=Object.keys(B).filter(k=>LINKS[k]).map(k=>{const b=B[k];
+ return `<a class="tile" href="${LINKS[k]}" target="_blank" rel="noopener" style="color:var(--txt)"><span style="color:${b[2]};display:flex">${S(b[1],b[4]||'0 0 24 24',b[3]?'b':'')}</span>${b[0]}</a>`}).join('');
+
+// contact-row icons
+const R={phone:'<path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 9 9 0 0 0 2.8.45 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A16 16 0 0 1 3 5a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1c0 1 .15 1.9.45 2.8a1 1 0 0 1-.25 1Z"/>',
+ mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',globe:B.website[1],
+ pin:'<path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.500"/>'};
+for(const k in R)$('i-'+k).innerHTML=S(R[k]);
+
+// services
+const V=[['Ride Sharing','<path d="M5 16l1.500-5a2 2 0 0 1 1.900-1.400h7.200a2 2 0 0 1 1.900 1.400L19 16M4 16h16v3h-2v-1H6v1H4zM7.500 13.500h.01M16.500 13.500h.01"/>'],
+['Food Delivery','<path d="M4 17h16M5 17a7 7 0 0 1 14 0M12 8V6M10.500 6h3"/>'],
+['Parcel Delivery','<path d="M3 7.500 12 3l9 4.500v9L12 21l-9-4.500zM3 7.500l9 4.500 9-4.500M12 12v9"/>'],
+['Courier','<path d="M3 7h11v9H3zM14 10h4l3 3v3h-7M7 19a1.500 1.500 0 1 0 0-.01M17 19a1.500 1.500 0 1 0 0-.01"/>'],
+['Marketplace','<path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/>'],
+['Medicine','<path d="M10.500 20.500a4.950 4.950 0 0 1-7-7l10-10a4.950 4.950 0 0 1 7 7zM8.500 8.500l7 7"/>'],
+['IT Solutions','<path d="M4 5h16v11H4zM9 20h6M12 16v4M10 9l-2 2 2 2M14 9l2 2-2 2"/>','full'],
+['Ride Bangla Pay','<path d="M4 7h15a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zM4 7l12-3v3M16 13h.01"/>','full pay']];
+$('svc').innerHTML=V.map(v=>`<div class="s ${v[2]||''}">${S(v[1])}${v[0]}</div>`).join('');
+
+// QR (this card's live address; falls back to website)
+try{const url=/^https?:/.test(location.href)?location.href.split('#')[0]:LINKS.website;
+ const q=qrcode(0,'H');q.addData(url);q.make();$('qr').insertAdjacentHTML('afterbegin',q.createSvgTag({cellSize:4,margin:0,scalable:true}));}catch(e){$('qr').style.display='none'}
+
+// ---- flip-card interaction ----
+const inner=$('flipInner'),openBtn=$('open'),lbl=openBtn.querySelector('.lbl');
+function setFlipped(v){
+  inner.classList.toggle('flipped',v);
+  openBtn.setAttribute('aria-expanded',v);
+  lbl.textContent=v?'Back to card':'Scan & Connect';
+}
+$('frontFace').addEventListener('click',()=>setFlipped(true));
+$('frontFace').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setFlipped(true)}});
+$('backBtn').addEventListener('click',e=>{e.stopPropagation();setFlipped(false)});
+openBtn.addEventListener('click',()=>setFlipped(!inner.classList.contains('flipped')));
+
+// vCard
+$('save').onclick=()=>{const v=['BEGIN:VCARD','VERSION:3.0','FN:Enamul Seddik','N:Seddik;Enamul;;;','ORG:Ride Bangla','TITLE:Co-Founder & CEO','TEL;TYPE=CELL:+8801626633316','EMAIL:info@ridebangla.bd','URL:https://ridebangla.bd','ADR;TYPE=WORK:;;Dhaka;;;;Bangladesh','END:VCARD'].join('\r\n');
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download='Enamul-Seddik.vcf';a.click()};
+</script>
+</body>
+</html>
