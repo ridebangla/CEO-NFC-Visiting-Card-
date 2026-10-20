@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://ceo.ridebangla.bd/sitemap.xml
