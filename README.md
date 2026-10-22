@@ -38,13 +38,14 @@
 |---|---|
 | Production | ✅ Live at [ceo.ridebangla.bd](https://ceo.ridebangla.bd) |
 | Card design & content | 🔒 **FINAL — frozen** by the owner's decision (2026-10-20). Only bug-class fixes (spelling, names/titles, service list) may ever be made, and only on the owner's order |
-| Functional re-audit (2026-10-22) | ✅ Complete — every contact action, link and asset verified end to end; **0 functional bugs found**; live page byte-identical to the FINAL build |
+| Functional re-audit (2026-10-22) | ✅ Complete — every contact action, link and asset verified end to end; live page byte-identical to the FINAL build. An independent second check then found **two accessibility defects** the first pass missed — the card flip was mouse/touch-only (no keyboard operation), and four front-face tap targets were unnamed duplicate links. Both were fixed the same day with attribute/handler-only changes; the card's design and rendering are unchanged |
 | Repository cleanup (2026-10-22) | ✅ Complete — one proven orphan asset removed (368,570 bytes); repository slimmed from 30 → 29 files; the rendered card did not change by a single byte |
 | This README | ✅ Rewritten 2026-10-22 to the project's true current state |
 
 ### What remains
 
 - **Owner decision — retained original artwork files (1,514,963 bytes).** The page renders the CEO portrait and all 8 service icons from inline data URIs, so it never downloads `photo.png` or `assets/services/*.svg`. Those files are the stored originals and are kept for now; removing them is a one-commit change whenever the owner decides. Details in [Repository Notes](#-repository-notes).
+- **Owner decision — Save Contact button font.** The button's CSS declares `"Plus Jakarta Sans", Arial, sans-serif`, but Plus Jakarta Sans is not among the fonts the page loads, so the button renders in Arial. Loading the font would change the FINAL card's typography, so this stays as-is unless the owner orders the change.
 - Nothing else is outstanding. There is deliberately **no** help center or AI agent on this card — it is a personal visiting card, by the owner's ruling.
 
 ---
@@ -114,10 +115,10 @@ It is intentionally a **visiting card only** — no help center, no AI agent, no
 ## 🎴 The Card Experience
 
 ### Front face
-Identity and direct contact: name, title, company, portrait, and tap-to-act rows for phone, email, website, location, WhatsApp, Facebook, WeChat and X.
+Identity and direct contact: name, title, company, portrait, and tap-to-act rows for phone, email, website and location.
 
 ### Back face
-Connection and company: a dynamically generated **QR code**, social/contact tiles, the company overview, the 8-service showcase, official links, and **Save Contact**.
+Connection: a dynamically generated **QR code**, six social/contact tiles (website, WhatsApp, Facebook, WeChat, X and location) and a short About blurb. The company overview, the 8-service showcase, the official links and the **Save Contact** button are not on the card — they sit below it, in the company panel.
 
 ### 3D flip
 A real CSS 3D rotation — not an image swap:
@@ -282,7 +283,7 @@ CEO-NFC-Visiting-Card-/
 
 ## 🚀 Deployment
 
-Static hosting on **Vercel**. `vercel.json` enables clean URLs and rewrites every route to `index.html`, with the security headers above. There is no build command and no environment configuration — pushing to `main` deploys the card.
+Static hosting on **Vercel**. `vercel.json` enables clean URLs and declares a catch-all rewrite to `index.html`, with the security headers above. (In practice the card is a single page at `/`; unknown paths still return 404.) There is no build command and no environment configuration — pushing to `main` deploys the card.
 
 ---
 
