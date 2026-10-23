@@ -1,163 +1,61 @@
-<p align="center">
-  <img src="./logo.png" alt="Ride Bangla Logo" width="260"/>
-</p>
+<div align="center">
 
-<h1 align="center">🇧🇩 Ride Bangla — CEO Digital Visiting Card</h1>
+<img src="docs/screenshots/card-phone-front.png" alt="Enamul Seddik — digital visiting card, front face, live at ceo.ridebangla.bd" width="330" />
 
-<h3 align="center">
-  Enamul Seddik · Co-Founder &amp; CEO · Ride Bangla Limited
-</h3>
+# Enamul Seddik
 
-<p align="center">
-  <strong>Production • Static HTML / CSS / JavaScript • Vercel • No Build Step</strong>
-</p>
+### Co-Founder & CEO · Ride Bangla Limited
 
-<p align="center">
-  NFC Card • QR Connect • Save Contact • vCard • 3D Card Flip • Service Showcase • Faridpur, Bangladesh
-</p>
+**The digital NFC visiting card of the Co-Founder & CEO of Ride Bangla Limited — tap the physical card, scan the QR, or open the link, and the card is on your phone: view it, flip it, connect, and save the contact in one tap.**
 
-<p align="center">
-  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-Single%20File-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-  <img alt="CSS3" src="https://img.shields.io/badge/CSS3-Embedded-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000"/>
-  <img alt="Vercel" src="https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
-  <img alt="License" src="https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge"/>
-</p>
+[![Live Website](https://img.shields.io/badge/Live%20Website-ceo.ridebangla.bd-0B5A37?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ceo.ridebangla.bd)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-D51D2A?style=for-the-badge)](LICENSE)
 
-<p align="center">
-  <a href="https://ceo.ridebangla.bd"><strong>Live Card</strong></a>
-  ·
-  <a href="https://ridebangla.bd">Official Website</a>
-</p>
+[Open the live card](https://ceo.ridebangla.bd) · [Official Website](https://ridebangla.bd)
+
+</div>
 
 ---
 
-## 📌 Project Status
+## About
 
-| Area | Status |
+This repository is the **digital visiting card of Enamul Seddik, Co-Founder & CEO of Ride Bangla Limited** — the web page behind his physical NFC card, live at [ceo.ridebangla.bd](https://ceo.ridebangla.bd).
+
+The page presents the card exactly as the physical card presents him: a premium dark-green and gold card — the Ride Bangla logo sitting directly on the dark-green design — with his portrait, name, title and direct contact rows on the front, and a **“Scan & Connect”** QR side on the back. Below the card, the same page carries the official company profile: a company overview, the complete Ride Bangla service showcase, and the official links.
+
+It is intentionally a **visiting card only** — a single self-contained page with no backend, no forms and no account system. Its design and content are **final, as confirmed by the owner**; this README documents the card as it is.
+
+> **Together We Move — A Better Tomorrow** · Faridpur, Bangladesh 7803
+
+---
+
+## What the card does
+
+**Tap, open, view, connect, save** — everything happens on the one page:
+
+1. **Tap or open** — tapping the physical NFC card (or opening [ceo.ridebangla.bd](https://ceo.ridebangla.bd), or scanning the QR code) lands on the card. The front face greets with **“Tap to Connect”**.
+2. **View** — the front face shows the portrait, name, title, company and tap-to-act contact rows. **“Tap the card to flip”**: a real CSS 3D flip turns the card over (keyboard `Enter` / `Space` works too; taps on links and buttons never flip it by accident). The card keeps its exact artwork proportion (`1051 / 1496`) at any screen size.
+3. **Connect** — the back face offers six tiles: **Website**, **WhatsApp**, **Facebook**, **WeChat**, **X** and **Location**, plus a short About Us. The front face rows dial, email, open the website and open the location directly.
+4. **Save** — **Save Contact to Phone** builds a standard vCard in the browser and downloads it (`Enamul-Seddik-RideBangla.vcf`), together with both card faces as images (`Enamul-Seddik-RideBangla-Card-Front.jpg` / `-Card-Back.jpg`). Everything is client-side — there is no server endpoint.
+5. **Pass it on** — the QR code on the back is generated in the browser on every load and points back at the card itself (`https://ceo.ridebangla.bd/`), so anyone who scans it lands on this same card and can save the contact in turn.
+
+### Contact actions — exactly as the card implements them
+
+| Action | Destination |
 |---|---|
-| Production | ✅ Live at [ceo.ridebangla.bd](https://ceo.ridebangla.bd) |
-| Card design & content | 🔒 **FINAL — frozen** by the owner's decision (2026-10-20). Only bug-class fixes (spelling, names/titles, service list) may ever be made, and only on the owner's order |
-| Functional re-audit (2026-10-22) | ✅ Complete — every contact action, link and asset verified end to end; live page byte-identical to the FINAL build. An independent second check then found **two accessibility defects** the first pass missed — the card flip was mouse/touch-only (no keyboard operation), and four front-face tap targets were unnamed duplicate links. Both were fixed the same day with attribute/handler-only changes; the card's design and rendering are unchanged |
-| Repository cleanup (2026-10-22) | ✅ Complete — one proven orphan asset removed (368,570 bytes); repository slimmed from 30 → 29 files; the rendered card did not change by a single byte |
-| This README | ✅ Rewritten 2026-10-22 to the project's true current state |
-
-### What remains
-
-- **Owner decision — retained original artwork files (1,514,963 bytes).** The page renders the CEO portrait and all 8 service icons from inline data URIs, so it never downloads `photo.png` or `assets/services/*.svg`. Those files are the stored originals and are kept for now; removing them is a one-commit change whenever the owner decides. Details in [Repository Notes](#-repository-notes).
-- **Owner decision — Save Contact button font.** The button's CSS declares `"Plus Jakarta Sans", Arial, sans-serif`, but Plus Jakarta Sans is not among the fonts the page loads, so the button renders in Arial. Loading the font would change the FINAL card's typography, so this stays as-is unless the owner orders the change.
-- Nothing else is outstanding. There is deliberately **no** help center or AI agent on this card — it is a personal visiting card, by the owner's ruling.
-
----
-
-## 🖼 Visual Preview
-
-The card's own artwork, straight from this repository — the real card faces are the presentation.
-
-<table>
-<tr>
-<td align="center" width="50%">
-
-**Front**
-
-<br>
-
-<img src="./card-front.jpg" alt="Ride Bangla digital card — front" width="330">
-
-</td>
-<td align="center" width="50%">
-
-**Back**
-
-<br>
-
-<img src="./card-back.jpg" alt="Ride Bangla digital card — back" width="330">
-
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td align="center" width="50%">
-
-**Ride Bangla Logo** (`logo.png`, 500 × 500)
-
-<br>
-
-<img src="./logo.png" alt="Ride Bangla logo" width="200">
-
-</td>
-<td align="center" width="50%">
-
-**CEO Portrait** (`photo.png`, 640 × 640)
-
-<br>
-
-<img src="./photo.png" alt="Enamul Seddik" width="200">
-
-</td>
-</tr>
-</table>
-
----
-
-## 📇 About This Project
-
-This repository is the **digital visiting card of Enamul Seddik, Co-Founder & CEO of Ride Bangla Limited** — the web experience behind the physical NFC card.
-
-A visitor who taps the NFC card (or opens the link, or scans the QR code) lands on a single page that behaves like the physical card: a premium dark-green and gold card that **flips in 3D**, with working contact actions on both faces, a company overview, the Ride Bangla service showcase, and a one-tap **Save Contact** that downloads a standard vCard plus both card faces as images.
-
-It is intentionally a **visiting card only** — no help center, no AI agent, no forms, no backend.
-
----
-
-## 🎴 The Card Experience
-
-### Front face
-Identity and direct contact: name, title, company, portrait, and tap-to-act rows for phone, email, website and location.
-
-### Back face
-Connection: a dynamically generated **QR code**, six social/contact tiles (website, WhatsApp, Facebook, WeChat, X and location) and a short About blurb. The company overview, the 8-service showcase, the official links and the **Save Contact** button are not on the card — they sit below it, in the company panel.
-
-### 3D flip
-A real CSS 3D rotation — not an image swap:
-
-```css
-.inner {
-  transform-style: preserve-3d;
-  transition: transform .82s cubic-bezier(.2,.75,.18,1);
-}
-.inner.flipped { transform: rotateY(180deg); }
-.front { background-image: url(card-front.jpg); }
-.back  { background-image: url(card-back.jpg); transform: rotateY(180deg); }
-```
-
-Taps on links and buttons never trigger an accidental flip. The card keeps the artwork's exact proportion (`aspect-ratio: 1051/1496`) and scales its typography with a container-query unit (`--u: calc(100cqw/1051)`), so it stays correct on any phone screen. `Enter` / `Space` flip the card from the keyboard.
-
----
-
-## 🔗 Contact Actions
-
-Every value below is read from the live card source.
-
-| Action | Value |
-|---|---|
-| Call (personal) | `+880 1626 633316` |
-| Call (company) | `+880 1309 587749` |
-| Email | `info@ridebangla.bd` |
-| Website | `https://ridebangla.bd` |
-| WhatsApp | `https://wa.me/8801626633316` |
-| Facebook | `https://www.facebook.com/enamulseddik` |
-| X | `https://x.com/enamulseddik` |
-| WeChat | tap copies the ID `enamulseddik` and offers the `weixin://` app link |
+| Call (personal) | +880 1626 633316 |
+| Email | info@ridebangla.bd |
+| Website | https://ridebangla.bd |
 | Location | Faridpur, Bangladesh 7803 (Google Maps search link) |
+| WhatsApp | https://wa.me/8801626633316 |
+| Facebook (personal) | https://www.facebook.com/enamulseddik |
+| X (personal) | https://x.com/enamulseddik |
+| WeChat | Tapping the tile copies the WeChat ID `enamulseddik` and offers the `weixin://` app link |
+| Company phone (company panel) | +880 1309 587749 |
 
----
+### QR connect
 
-## 📲 QR Connect
-
-The QR code is generated in the browser on every load (qrcode-generator 1.4.4 from cdnjs, SRI-pinned) and points at the card itself:
+The QR is not a stored image. On every load the page generates it with qrcode-generator 1.4.4 (cdnjs, SRI-pinned) at high error correction (`H`) and inserts it as SVG into the back face:
 
 ```js
 const q = qrcode(0, 'H');
@@ -165,27 +63,13 @@ q.addData('https://ceo.ridebangla.bd/');
 q.make();
 ```
 
-High error correction (`H`); the generated SVG is inserted into the back face's QR container. No QR artwork needs to be maintained by hand.
-
 ---
 
-## 💾 Save Contact
+## Services
 
-One tap builds a **vCard 3.0** in the browser and downloads `Enamul-Seddik-RideBangla.vcf`:
+The card's company panel presents the complete Ride Bangla service list — **Ride • Food • Delivery • Courier • Digital Services** — exactly as shown on the card:
 
-- Enamul Seddik — Ride Bangla Limited — Co-Founder & CEO
-- Phone `+8801626633316` · Email `info@ridebangla.bd` · Website `ridebangla.bd`
-- Address: Faridpur 7803, Bangladesh
-
-The same action renders both card faces with html2canvas 1.4.1 (cdnjs, SRI-pinned) and downloads `Enamul-Seddik-RideBangla-Card-Front.jpg` / `-Card-Back.jpg`; if rendering is unavailable it falls back to downloading the stored `card-front.jpg` / `card-back.jpg`. Everything is client-side — there is no server endpoint.
-
----
-
-## 🧰 Services on the Card
-
-The back face presents 8 Ride Bangla services, each with its own artwork (rendered on the page from inline SVG data URIs):
-
-| Service | Description |
+| Service | As the card describes it |
 |---|---|
 | Ride Share | Everyday mobility |
 | Food | Food delivery |
@@ -196,118 +80,104 @@ The back face presents 8 Ride Bangla services, each with its own artwork (render
 | IT Services | Technology solutions |
 | Ride Bangla Pay | Digital payment |
 
-Company positioning on the card: **Ride • Food • Delivery • Courier • Digital Services**.
+**Company Overview, as the card states it:** “Ride Bangla Limited is a Bangladesh-based multi-service platform built to make everyday mobility, food, parcel and courier needs more convenient. The platform brings essential services together through a simple digital experience.”
 
 ---
 
-## 🏗 How It Is Built
+## Screenshots
 
-One self-contained page. No framework, no package manager, no build step.
+Fresh captures of the live card at [ceo.ridebangla.bd](https://ceo.ridebangla.bd), taken for this README.
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/screenshots/card-phone-front.png" alt="Live card — front face on phone" width="100%" /><br/><b>Front face — phone</b><br/><sub>Identity, portrait and tap-to-act contact rows; “Tap to Connect”.</sub></td>
+    <td align="center" width="50%"><img src="docs/screenshots/card-phone-back.png" alt="Live card — back face on phone, with QR code" width="100%" /><br/><b>Back face — phone</b><br/><sub>“Scan &amp; Connect” QR, six connect tiles and About Us.</sub></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="docs/screenshots/card-phone-full.png" alt="Live card — full page on phone" width="100%" /><br/><b>Full page — phone</b><br/><sub>The card, Save Contact, and the company panel below it: overview, all 8 services and official links.</sub></td>
+    <td align="center" width="50%"><img src="docs/screenshots/card-desktop.png" alt="Live card — front face on desktop" width="100%" /><br/><b>Front face — desktop</b><br/><sub>The phone-first card centred at its exact proportion on a wide screen.</sub></td>
+  </tr>
+</table>
+
+The card's own artwork files also live in this repository: `card-front.jpg` and `card-back.jpg` (1051 × 1496).
+
+---
+
+## Tech
+
+One self-contained page — no framework, no package manager, no build step.
 
 | Layer | Implementation |
 |---|---|
-| Entry point | `index.html` (single file, 1,333,493 bytes — markup, CSS, JS and inline imagery) |
-| Styling | Embedded CSS, CSS custom properties, container-query scaling |
-| Interactions | Vanilla JavaScript (one inline script) |
-| Card faces | `card-front.jpg` / `card-back.jpg`, 1051 × 1496 |
+| Entry point | `index.html` — a single file holding the markup, CSS, JavaScript and inline imagery |
+| Styling | Embedded CSS with custom properties and container-query scaling (`--u: calc(100cqw / 1051)`), so the card's typography scales with the card itself |
+| Interactions | Vanilla JavaScript — 3D flip, QR generation, vCard + card-image downloads, WeChat ID copy with toast |
+| Card faces | `card-front.jpg` / `card-back.jpg` as the face backgrounds (1051 × 1496) |
 | QR | qrcode-generator 1.4.4 (cdnjs, SRI SHA-384 pinned) |
-| Face export | html2canvas 1.4.1 (cdnjs, SRI SHA-384 pinned) |
+| Face export | html2canvas 1.4.1 (cdnjs, SRI SHA-384 pinned), with a fallback to the stored face images |
 | Fonts | Google Fonts — Allura, Cormorant Garamond (600/700), Lato (400/700) |
-| PWA | `manifest.json` — standalone, theme `#030605`, icons 192/512 + maskable 512 + apple-touch 180 |
-| Hosting | Vercel static (`vercel.json`) |
+| PWA | `manifest.json` — standalone, portrait, theme `#030605`, icons 192/512 + maskable 512 + apple-touch 180 |
+| Hosting | Vercel static (`vercel.json` — clean URLs, rewrite to `index.html`, security headers) |
 
-### Design language
-Deep green / emerald surfaces, gold metallic accents (`--gold: #e7c978`, `--gold-light: #f5dfa0`), Bangladesh red (`--red: #d51d2a`), rounded gold card borders, premium serif display type (Cormorant Garamond) with Allura script for the connection treatment.
-
----
-
-## 🔒 Security Headers
-
-`vercel.json` serves the page with: Content-Security-Policy, Strict-Transport-Security (preload), X-Frame-Options `SAMEORIGIN`, X-Content-Type-Options `nosniff`, Referrer-Policy `strict-origin-when-cross-origin`, and Permissions-Policy (camera / microphone / geolocation off). Both third-party scripts are SRI-pinned, so a tampered CDN file cannot execute.
+**Design language — the card's own:** a deep-green radial ground (`#173b2d` → `#09130e` → `#030605`), emerald surfaces (`#0b4a30` / `#0b5a37`), gold metallic accents (`--gold: #e7c978`, `--gold-light: #f5dfa0`), Bangladesh red (`--red: #d51d2a`), rounded gold card borders, Cormorant Garamond serif display type and Allura script for the “Scan & Connect” treatment. The logo sits directly on the dark green — exactly as on the card itself.
 
 ---
 
-## 📁 Repository Structure
+## Security
 
-```text
-CEO-NFC-Visiting-Card-/
-│
-├── index.html                  ← the entire card (page + CSS + JS)
-├── vercel.json                   ← hosting: clean URLs, rewrite, security headers
-├── manifest.json               ← PWA manifest
-├── robots.txt                  ← points to sitemap.xml
-├── sitemap.xml                 ← the card URL
-│
-├── logo.png                    ← Ride Bangla logo (500 × 500) — used by the page
-├── photo.png                   ← CEO portrait original (640 × 640) — see Notes
-├── card-front.jpg              ← front card artwork (1051 × 1496)
-├── card-back.jpg               ← back card artwork (1051 × 1496)
-│
-├── favicon.ico
-├── icon-192.png
-├── icon-512.png
-├── icon-maskable-512.png
-├── apple-touch-icon.png
-│
-├── assets/
-│   └── services/               ← service artwork originals — see Notes
-│       ├── courier.svg
-│       ├── food.svg
-│       ├── it-services.svg
-│       ├── marketplace.svg
-│       ├── medicine.svg
-│       ├── parcel-delivery.svg
-│       ├── ride-bangla-pay.svg
-│       └── ride-share.svg
-│
-├── README.md
-├── LICENSE                     ← proprietary, © Ride Bangla Limited
-├── CLIENT-LICENSE-TEMPLATE.txt ← licence template for client handovers
-├── SECURITY.md
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-└── .gitignore
-```
+`vercel.json` serves the page with a Content-Security-Policy, Strict-Transport-Security (preload), `X-Frame-Options: SAMEORIGIN`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, and a Permissions-Policy with camera, microphone and geolocation off. Both third-party scripts are SRI-pinned, so a tampered CDN file cannot execute.
+
+Found a vulnerability? Please report it privately — see **[SECURITY.md](SECURITY.md)**. Do not open a public issue for a security problem.
 
 ---
 
-## 🗒 Repository Notes
+## The Ride Bangla ecosystem
 
-**How the page uses images.** The rendered page loads only: `logo.png`, `card-front.jpg`, `card-back.jpg`, the favicon/manifest icons and `manifest.json`. The CEO portrait and the 8 service icons are embedded in `index.html` as data URIs, so the page works even though it never requests the files below.
+Every Ride Bangla service, with working links:
 
-**Retained originals (owner decision pending).** `photo.png` (510,190 bytes) and `assets/services/*.svg` (1,004,773 bytes together) are the stored original artwork for the portrait and service marks. A full reference scan on 2026-10-22 proved the page never references them; they are retained until the owner decides on removal.
-
-**Removed in cleanup (2026-10-22).** `assets/logo-ride-bangla-transparent.png` (368,570 bytes) — proven zero references anywhere in the repository (page, manifest, config, meta/OG/JSON-LD, README) and zero hits in GitHub code search; removed in a single commit. The rendered card is byte-identical before and after (page MD5 `f298284648fe26c6327ebc4d85c8a1bf`).
-
----
-
-## 🚀 Deployment
-
-Static hosting on **Vercel**. `vercel.json` enables clean URLs and declares a catch-all rewrite to `index.html`, with the security headers above. (In practice the card is a single page at `/`; unknown paths still return 404.) There is no build command and no environment configuration — pushing to `main` deploys the card.
-
----
-
-## ⛔ Working Rules for This Repository
-
-- The card is **FINAL**. Its design, logo, layout and wording do not change — ever — unless the owner personally orders a specific change.
-- Permitted without a design order: bug-class fixes only — a spelling mistake, a wrong name/title, a broken link, a missing or misnamed canonical service.
-- This README is the project's living record: every work session updates it to the project's true state in the same session.
-- No help center, no AI agent, no analytics or extra features are added to the card. It is a visiting card.
+| Service | Link | What it is |
+|---|---|---|
+| **Main Website** | [ridebangla.bd](https://ridebangla.bd) | The official public face of Ride Bangla |
+| **AI Agent** | [ai.ridebangla.bd](https://ai.ridebangla.bd) | AI customer-service agent platform for businesses |
+| **Studio** | [studio.ridebangla.bd](https://studio.ridebangla.bd) | AI-powered ad, image and video generation |
+| **Tools** | [tools.ridebangla.bd](https://tools.ridebangla.bd) | Free online tools for everyday tasks |
+| **IT Team** | [it.ridebangla.bd](https://it.ridebangla.bd) | App, website, graphics and digital development services |
+| **Customer** | [customer.ridebangla.bd](https://customer.ridebangla.bd) | Customer platform for Ride Bangla services |
+| **Partner** | [partner.ridebangla.bd](https://partner.ridebangla.bd) | Business and merchant platform for partners |
+| **Rider** | [rider.ridebangla.bd](https://rider.ridebangla.bd) | Operational platform for registered riders |
+| **Agent** | [agent.ridebangla.bd](https://agent.ridebangla.bd) | Official platform for the agent network |
 
 ---
 
-## 📄 License
+## Contact & community
 
-Proprietary — © Ride Bangla Limited, all rights reserved. See [`LICENSE`](./LICENSE). [`CLIENT-LICENSE-TEMPLATE.txt`](./CLIENT-LICENSE-TEMPLATE.txt) is the licence template used when Ride Bangla hands over a client build. Security reports: see [`SECURITY.md`](./SECURITY.md).
+- **The card:** [ceo.ridebangla.bd](https://ceo.ridebangla.bd)
+- **Email:** [info@ridebangla.bd](mailto:info@ridebangla.bd)
+- **Company phone / WhatsApp:** +880 1309 587749
+- **Location:** Faridpur, Bangladesh 7803
+
+**Follow Ride Bangla everywhere**
+
+<a href="https://www.facebook.com/ridebangla"><img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" width="28" /></a>&nbsp;&nbsp;<a href="https://x.com/ridebangla"><img src="https://cdn.simpleicons.org/x/000000" alt="X" width="28" /></a>&nbsp;&nbsp;<a href="https://www.instagram.com/ride.bangla_"><img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" width="28" /></a>&nbsp;&nbsp;<a href="https://www.threads.net/@ride.bangla_"><img src="https://cdn.simpleicons.org/threads/000000" alt="Threads" width="28" /></a>&nbsp;&nbsp;<a href="https://www.tiktok.com/@ridebangla0"><img src="https://cdn.simpleicons.org/tiktok/000000" alt="TikTok" width="28" /></a>&nbsp;&nbsp;<a href="https://www.youtube.com/@ridebangla-0"><img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube" width="28" /></a>
+
+[Facebook](https://www.facebook.com/ridebangla) · [X](https://x.com/ridebangla) · [Instagram](https://www.instagram.com/ride.bangla_) · [Threads](https://www.threads.net/@ride.bangla_) · [TikTok](https://www.tiktok.com/@ridebangla0) · [YouTube](https://www.youtube.com/@ridebangla-0)
+
+**Community:** join the one and only official Ride Bangla community group — [Ride Bangla Community on Facebook](https://www.facebook.com/share/g/1CfmiTzv1D/).
 
 ---
 
-<p align="center">
-  <strong>Ride Bangla</strong><br/>
-  One digital card. One professional identity.<br/>
-  <code>Ride Bangla Limited · Faridpur, Bangladesh</code>
-</p>
+## License
 
-<p align="center">
-  <img src="./logo.png" alt="Ride Bangla" width="90"/>
-</p>
+Proprietary — © 2026 Ride Bangla Limited. All rights reserved.
+
+This software, including its source code, designs, documentation and assets, is the exclusive property of Ride Bangla Limited and may not be copied, reproduced, modified, distributed or otherwise used without prior written permission, except where a separate written agreement expressly permits it. Third-party components remain under their own open-source licenses. See **[LICENSE](LICENSE)** for the full text.
+
+---
+
+<div align="center">
+
+**Ride Bangla Limited** · Faridpur, Bangladesh
+
+*One digital card. One professional identity.*
+
+</div>
