@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/screenshots/card-phone-front.png" alt="Enamul Seddik — digital visiting card, front face, live at ceo.ridebangla.bd" width="330" />
+<img src="docs/images/card-front.png" alt="Enamul Seddik — digital visiting card, front face, live at ceo.ridebangla.bd" width="440" />
 
 # Enamul Seddik
 
@@ -84,18 +84,14 @@ The card's company panel presents the complete Ride Bangla service list — **Ri
 
 ---
 
-## Screenshots
+## The card
 
-Fresh captures of the live card at [ceo.ridebangla.bd](https://ceo.ridebangla.bd), taken for this README.
+Fresh captures of the live card at [ceo.ridebangla.bd](https://ceo.ridebangla.bd), taken for this README — the card itself, front and back, with the page around it removed.
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="docs/screenshots/card-phone-front.png" alt="Live card — front face on phone" width="100%" /><br/><b>Front face — phone</b><br/><sub>Identity, portrait and tap-to-act contact rows; “Tap to Connect”.</sub></td>
-    <td align="center" width="50%"><img src="docs/screenshots/card-phone-back.png" alt="Live card — back face on phone, with QR code" width="100%" /><br/><b>Back face — phone</b><br/><sub>“Scan &amp; Connect” QR, six connect tiles and About Us.</sub></td>
-  </tr>
-  <tr>
-    <td align="center" width="50%"><img src="docs/screenshots/card-phone-full.png" alt="Live card — full page on phone" width="100%" /><br/><b>Full page — phone</b><br/><sub>The card, Save Contact, and the company panel below it: overview, all 8 services and official links.</sub></td>
-    <td align="center" width="50%"><img src="docs/screenshots/card-desktop.png" alt="Live card — front face on desktop" width="100%" /><br/><b>Front face — desktop</b><br/><sub>The phone-first card centred at its exact proportion on a wide screen.</sub></td>
+    <td align="center" width="50%"><img src="docs/images/card-front.png" alt="Live card — front face" width="100%" /><br/><b>Front face</b><br/><sub>Identity, portrait and tap-to-act contact rows; “Tap to Connect”.</sub></td>
+    <td align="center" width="50%"><img src="docs/images/card-back.png" alt="Live card — back face, with QR code" width="100%" /><br/><b>Back face</b><br/><sub>“Scan &amp; Connect” QR, six connect tiles and About Us.</sub></td>
   </tr>
 </table>
 
